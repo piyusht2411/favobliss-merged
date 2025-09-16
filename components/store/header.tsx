@@ -212,8 +212,10 @@ export default function DynamicHeader({ categories }: DynamicHeaderProps) {
     try {
       const response = await fetch(
         `${
-          process.env.NEXT_PUBLIC_API_URL
-        }/search-item?query=${encodeURIComponent(query)}&page=1&limit=10`,
+          process.env.NEXT_PUBLIC_STORE_URL
+        }/api/admin/684315296fa373b59468f387/search-item?query=${encodeURIComponent(
+          query
+        )}&page=1&limit=10`,
         { cache: "no-store" }
       );
       if (!response.ok) {

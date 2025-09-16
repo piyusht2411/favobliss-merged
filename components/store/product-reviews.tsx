@@ -118,7 +118,7 @@ export const ProductReviews = (props: ProductReviewsProps) => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/products/${productId}/reviews?page=1&limit=100`
+        `${process.env.NEXT_PUBLIC_STORE_URL}/api/admin/684315296fa373b59468f387/products/${productId}/reviews?page=1&limit=100`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch reviews");
@@ -200,7 +200,7 @@ export const ProductReviews = (props: ProductReviewsProps) => {
     setIsDeleting(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/products/${productId}/reviews/${reviewToDelete}`,
+        `${process.env.NEXT_PUBLIC_STORE_URL}/api/admin/684315296fa373b59468f387/products/${productId}/reviews/${reviewToDelete}`,
         {
           method: "DELETE",
           headers: {
